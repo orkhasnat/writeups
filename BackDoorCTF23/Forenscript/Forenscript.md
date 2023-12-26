@@ -1,13 +1,11 @@
----
-Name: Forenscript
-Category: Forensic
+# Forenscript
+Category: #Forensic
 Difficulty: Medium
-Description: It's thundering outside and you are you at your desk having solved 4 forensics challenges so far. Just pray to god you solve this one. You might want to know that sometimes too much curiosity hides the flag.
+>It's thundering outside and you are you at your desk having solved 4 forensics challenges so far. Just pray to god you solve this one. You might want to know that sometimes too much curiosity hides the flag.
 ---
+In the challenge, a [file](a.bin) with a `.bin` extension was provided. Running the `file` command didn't yield anything useful. In any forensic problem, examining the hexdump of the file is crucial. So I looked into the hexdump.
 
-In the challenge, a file with a `.bin` extension was provided. Running the `file` command didn't yield anything useful. In any forensic problem, examining the hexdump is crucial. So I looked into the hexdump of the file.
-
-### Weird Hexdump
+### Hidden Details in the Hexdump
 Running `xxd` on the file produced a peculiar hexdump:
 ```bash
 ➜➜ xxd a.bin | head
@@ -23,11 +21,11 @@ Running `xxd` on the file produced a peculiar hexdump:
 00000090: 8814 214a bba7 5be1 f6f6 eeed 8e6b 1bfd  ..!J..[......k..
 ```
 
-Upon closer inspection, strings like `GNP` and `RDHI` appear, resembling `PNG` and `IHDR` found in PNG files. Notably, the byte order is reversed for every 4 bytes. I reversed the bytes in groups of 4 using the following Python script:
+Upon closer inspection, strings like `GNP` and `RDHI` appear, resembling `PNG` and `IHDR` found in PNG files. Notably, the byte order is reversed for every 4 bytes. I reversed the bytes in groups of 4 using the following python script:
 
 ```python
 with open("a.bin", "rb") as ifile:
-  with open("image1.png", "wb") as ofile:
+  with open("broken.png", "wb") as ofile:
     while True:
       chunk = ifile.read(4)
       if not chunk:
@@ -37,10 +35,10 @@ with open("a.bin", "rb") as ifile:
 
 ```
 
-The resulting PNG file is ![img1.png](img1.png)
+The resulting PNG file is, ![broken.png](broken.png)
 
 ### Oh no, a red herring, or is it?
-The image says "fake flag," so I delved deeper. Analyzing the hexdump of the new PNG file in the hex editor, I found another PNG file hidden within it. I simply extracted the embedded PNG file using the following Python script:
+The image says "Fake Flag!!!", so I delved deeper. Analyzing the hexdump of the new PNG file in the hex editor, I found another PNG file hidden within it. I simply extracted the embedded PNG file using the following python script:
 
 ```python
 # Hidden PNG from offset 60048 to 127482
