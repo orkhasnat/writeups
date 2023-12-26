@@ -1,7 +1,7 @@
 # Sonic Hide and Seek
 Category: #Forensic 
 
-Difficulty: Medium
+Difficulty: #Medium
 
 > From the apollo moon landing in 1969 to people using Deepfake to fool others, the use of technology has changed. Anyways, use your skills to uncover the deep secrets of the moon landing from the given data. Adios amigo.
 
@@ -22,7 +22,7 @@ sstv -d hideandseek.wav -o part2.png
 > [!tip] **Slow Scan Television**
 > 
 > For those who don't know, SSTV stands for Slow Scan Television. It's a method of transmitting still images or video over radio frequencies in a manner that allows them to be received and displayed in real-time. Instead of transmitting full-motion video, SSTV sends still images one line at a time.
-> >SSTV encoding has an unique spectrogram.
+> >SSTV encoding exhibits a distinctive pattern. So it is easy to recognize from a spectrogram.
 
 
 There we go, the second part:
