@@ -1,7 +1,10 @@
 # Forenscript
 Category: #Forensic
+
 Difficulty: Medium
+
 >It's thundering outside and you are you at your desk having solved 4 forensics challenges so far. Just pray to god you solve this one. You might want to know that sometimes too much curiosity hides the flag.
+
 ---
 In the challenge, a [file](a.bin) with a `.bin` extension was provided. Running the `file` command didn't yield anything useful. In any forensic problem, examining the hexdump of the file is crucial. So I looked into the hexdump.
 
@@ -22,7 +25,6 @@ Running `xxd` on the file produced a peculiar hexdump:
 ```
 
 Upon closer inspection, strings like `GNP` and `RDHI` appear, resembling `PNG` and `IHDR` found in PNG files. Notably, the byte order is reversed for every 4 bytes. I reversed the bytes in groups of 4 using the following python script:
-
 ```python
 with open("a.bin", "rb") as ifile:
   with open("broken.png", "wb") as ofile:
@@ -39,7 +41,6 @@ The resulting PNG file is, ![broken.png](broken.png)
 
 ### Oh no, a red herring, or is it?
 The image says "Fake Flag!!!", so I delved deeper. Analyzing the hexdump of the new PNG file in the hex editor, I found another PNG file hidden within it. I simply extracted the embedded PNG file using the following python script:
-
 ```python
 # Hidden PNG from offset 60048 to 127482
 start = 60048
@@ -50,7 +51,6 @@ with open("image1.png", "rb") as ifile:
     cc = ifile.read(end - start)
     f.write(cc)
 ```
- 
 Alternatively, you can use `binwalk` to extract it.
 
 ## Flag
