@@ -6,11 +6,11 @@ Difficulty: Medium
 > From the apollo moon landing in 1969 to people using Deepfake to fool others, the use of technology has changed. Anyways, use your skills to uncover the deep secrets of the moon landing from the given data. Adios amigo.
 
 ---
-They provided us with a [`.wav` file](hideandseek.wav).
+They provided us with a [`.wav`](hideandseek.wav) file.
 
 ### Spectrogram
 Anytime I encounter a `.wav` file, the first thing that comes to my mind is checking the spectrogram. Using **Sonic Visualizer**, I found the first part of the flag in the spectrogram.
-![[part1.png]]
+![part1](part1.png)
 >Part 1: `flag{aud105`
 
 ### SSTV
@@ -20,8 +20,9 @@ sstv -d hideandseek.wav -o part2.png
 ```
 
 > [!tip] **Slow Scan Television**
+> 
 > For those who don't know, SSTV stands for Slow Scan Television. It's a method of transmitting still images or video over radio frequencies in a manner that allows them to be received and displayed in real-time. Instead of transmitting full-motion video, SSTV sends still images one line at a time.
-> ==SSTV encoding has an unique spectrogram.==
+> >SSTV encoding has an unique spectrogram.
 
 
 There we go, the second part:
