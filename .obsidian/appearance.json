@@ -1,0 +1,13 @@
+{
+  "accentColor": "",
+  "cssTheme": "AnuPpuccin",
+  "theme": "obsidian",
+  "enabledCssSnippets": [
+    "extended-colorschemes",
+    "custom"
+  ],
+  "interfaceFontFamily": "Operator Mono",
+  "textFontFamily": "Operator Mono",
+  "monospaceFontFamily": "CaskaydiaCove Nerd Font Mono",
+  "baseFontSize": 18
+}
