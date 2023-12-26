@@ -30,7 +30,7 @@ There we go, the second part:
 > Part2: `_4r3_c00l_`
 ### Deepsound
 Honestly, I tried a bunch of stuff to dig up the last part, but nothing clicked. Finally, my teammate came through and uncovered the last piece of the flag using [*DeepSound*](https://github.com/oneplus-x/DeepSound-2.0).
-> Part3: `4r5n't_th3y?}``
+> Part3: `4r5n't_th3y?}`
 
 ## Flag
 And there you have it—the flag:

@@ -18,9 +18,9 @@ I remembered Rockstar, an esoteric programming language designed to make code re
 Using this [online interpreter](https://esolangpark.vercel.app/ide/shakespeare), I got the following output,
 >Hey guys i hope you loved shakespearean english, i always did. Anyways here is the password you might need, ohh not easily 4f440a001006a49f24a7de53c04eca3f79aef851ac58e460c9630d044277c8b0. Use it well ;)
 ### Reversing the Hash
-We got a password `4f440a0010...` which has a length of 32 characters, awfully like a hash. Again googling around, I stumbled upon [this link](https://q9f.github.io/secp256k1.cr/Secp256k1/Util.html#keccak%28data%3ANum%7CBytes%7CString%2Centropy%3D256%29%3ANum-instance-method) where the corresponding password was revealed as `0xdeadbeef`.
+We got a password `4f440a0010...` which has a length of 32 characters, suspiciously looking like a hash. Again googling around, I stumbled upon [this link](https://q9f.github.io/secp256k1.cr/Secp256k1/Util.html#keccak%28data%3ANum%7CBytes%7CString%2Centropy%3D256%29%3ANum-instance-method) where the corresponding password was revealed as `0xdeadbeef`.
 ## UpSolve
-Even after grabbing the password, I kept trying different steganographic tools without any luck. I even went so far as to download the original `jpg` image, trying to crack the steganographic algorithm used. But unfortunately, I found myself in a rabbit hole. In the end, as time ran out, I was unable to solve it 😔😔.
+Even after grabbing the password, I kept trying different steganographic tools without any luck. I even went so far as to download the original `jpg` image, trying to crack the steganographic algorithm used. But unfortunately, I found myself in a rabbit hole. In the end, as time ran out, I was unable to solve it 😔.
 ### Extracting the Mouse
 I had searched through various stego tools, but couldn't find anything that worked in this case. As it turns out, the process was done using [**OpenStego**](https://www.openstego.com/), which ironically doesn't even mention the `bmp` format on its main page. When using OpenStego, it generates a zip file containing two files, `finaldon.rec` and `instructions.txt`.
 
