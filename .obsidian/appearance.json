@@ -1,13 +1,12 @@
 {
   "accentColor": "",
-  "cssTheme": "AnuPpuccin",
-  "theme": "obsidian",
+  "cssTheme": "Sanctum",
+  "baseFontSize": 17,
   "enabledCssSnippets": [
-    "extended-colorschemes",
     "custom"
   ],
-  "interfaceFontFamily": "Operator Mono",
-  "textFontFamily": "Operator Mono",
-  "monospaceFontFamily": "CaskaydiaCove Nerd Font Mono",
-  "baseFontSize": 18
+  "theme": "obsidian",
+  "interfaceFontFamily": "Quicksand Medium",
+  "textFontFamily": "iA Writer Duo V",
+  "monospaceFontFamily": "Monaco"
 }
